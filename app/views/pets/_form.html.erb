@@ -1,0 +1,87 @@
+<%= form_with(model: pet) do |form| %>
+  <% if pet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+        <% pet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :picture, style: "display: block" %>
+    <%= form.text_field :picture %>
+  </div>
+
+  <div>
+    <%= form.label :owner, style: "display: block" %>
+    <%= form.text_field :owner %>
+  </div>
+
+  <div>
+    <%= form.label :owner_id, style: "display: block" %>
+    <%= form.number_field :owner_id %>
+  </div>
+
+  <div>
+    <%= form.label :breed, style: "display: block" %>
+    <%= form.text_field :breed %>
+  </div>
+
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div>
+    <%= form.label :weight, style: "display: block" %>
+    <%= form.number_field :weight %>
+  </div>
+
+  <div>
+    <%= form.label :disease, style: "display: block" %>
+    <%= form.number_field :disease %>
+  </div>
+
+  <div>
+    <%= form.label :medicins, style: "display: block" %>
+    <%= form.number_field :medicins %>
+  </div>
+
+  <div>
+    <%= form.label :food, style: "display: block" %>
+    <%= form.number_field :food %>
+  </div>
+
+  <div>
+    <%= form.label :date_in, style: "display: block" %>
+    <%= form.datetime_field :date_in %>
+  </div>
+
+  <div>
+    <%= form.label :date_out, style: "display: block" %>
+    <%= form.datetime_field :date_out %>
+  </div>
+
+  <div>
+    <%= form.label :keeper, style: "display: block" %>
+    <%= form.text_field :keeper %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  picture: 
+  owner: MyString
+  owner_id: 1
+  breed: MyString
+  age: 1
+  weight: 1
+  disease: 1
+  medicins: 1
+  food: 1
+  date_in: 2023-12-02 15:53:40
+  date_out: 2023-12-02 15:53:40
+  keeper: MyString
+  description: MyText
+
+two:
+  title: MyString
+  picture: 
+  owner: MyString
+  owner_id: 1
+  breed: MyString
+  age: 1
+  weight: 1
+  disease: 1
+  medicins: 1
+  food: 1
+  date_in: 2023-12-02 15:53:40
+  date_out: 2023-12-02 15:53:40
+  keeper: MyString
+  description: MyText
