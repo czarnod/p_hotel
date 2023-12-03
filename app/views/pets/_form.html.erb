@@ -1,6 +1,6 @@
 <%= form_with(model: pet) do |form| %>
   <% if pet.errors.any? %>
-    <div style="color: red">
+    <div style="color: white  ">
       <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
 
       <ul>
@@ -48,27 +48,27 @@
 
   <div>
     <%= form.label :disease, style: "display: block" %>
-    <%= form.number_field :disease %>
+    <%= form.text_field :disease %>
   </div>
 
   <div>
     <%= form.label :medicins, style: "display: block" %>
-    <%= form.number_field :medicins %>
+    <%= form.text_field :medicins %>
   </div>
 
   <div>
     <%= form.label :food, style: "display: block" %>
-    <%= form.number_field :food %>
+    <%= form.text_field :food %>
   </div>
 
   <div>
     <%= form.label :date_in, style: "display: block" %>
-    <%= form.datetime_field :date_in %>
+    <%= form.date_field :date_in %>
   </div>
 
   <div>
     <%= form.label :date_out, style: "display: block" %>
-    <%= form.datetime_field :date_out %>
+    <%= form.date_field :date_out %>
   </div>
 
   <div>
