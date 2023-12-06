@@ -1,4 +1,33 @@
+
 <div id="<%= dom_id pet %>">
+<div class="card">
+  <img src="home_dog1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center"><%= pet.title %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Imie: <%=pet.title %></li>
+    <li class="list-group-item">Wlasciciel: <%=pet.owner %></li>
+    <li class="list-group-item">Rasa Psa: <%=pet.breed %></li>
+    <li class="list-group-item">Wiek: <%=pet.age %></li>
+    <li class="list-group-item">Waga: <%=pet.weight %></li>
+    <li class="list-group-item">Choroby: <%=pet.disease %></li>
+    <li class="list-group-item">Lekarstwa: <%=pet.medicins %></li>
+    <li class="list-group-item">Karma: <%=pet.food %></li>
+    <li class="list-group-item">Zameldowanie: <%=pet.date_in %></li>
+    <li class="list-group-item">Wymeldowanie: <%=pet.date_out %></li>
+    <li class="list-group-item">Opiekun: <%=pet.keeper %></li>
+    <li class="list-group-item">Komentarz: <%=simple_format(pet.description) %></li>
+
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+
   <p>
     <strong>Title:</strong>
     <%= pet.title %>
