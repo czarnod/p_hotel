@@ -1,129 +1,120 @@
-<div class= "container ">
-<div class= "row justify-content-center">
-<div class= "col-8">
 
+<div class= "container">
+  <div class= "row justify-content-center">
+  <div class= "col-8">
+  <%= render 'shared/errors' %>
   <%= form_with(model: pet) do |form| %>
-    <% if pet.errors.any? %>
-      <div style="color: white  ">
-        <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
-
-        <ul>
-          <% pet.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
+      <div class="form-group-row mb-3">
+        <%= form.label :title, 'Imie psa: *', class: "col-2 col-form-label" %>
+        <div class="col-sm">
+          <%= form.text_field :title, class: "form-control" %>
+        </div>
       </div>
-    <% end %>
-  
-
-  
-    <div class="form-group-row mb-3">
-      <%= form.label :title, 'Imie psa:', class: "col-2 col-form-label" %>
+    
+      <div class="form-group-row mb-3">
+      <%= form.label :picture, 'Zdjecie:', class: "col-2 col-form-label" %>
       <div class="col-sm">
-        <%= form.text_field :title, class: "form-control" %>
+        <%= form.text_field :picture, class: "form-control" %>
       </div>
     </div>
-   
+
     <div class="form-group-row mb-3">
-    <%= form.label :picture, 'Zdjecie:', class: "col-2 col-form-label" %>
+    <%= form.label :owner, 'Wlasciciel: *', class: "col-2 col-form-label" %>
     <div class="col-sm">
-      <%= form.text_field :picture, class: "form-control" %>
+      <%= form.text_field :owner, class: "form-control" %>
     </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :owner_id, 'ID wlasciciela:', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.number_field :onwer_id, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :breed, 'Rasa:', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.text_field :breed, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :age, 'Wiek:', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.number_field :age, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :weight, 'Waga:', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.number_field :weight, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :disease, 'Szczepiony', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.text_field :disease, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :medicins, 'Leki:', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.text_field :medicins, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :food, 'Preferowana karma:', class: "col-3 col-form-label" %>
+    <div class="col-sm">
+      <%= form.text_field :food, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :date_in, 'Pobyt od: *', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.date_field :date_in, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :date_out, 'Pobyt do: *', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.date_field :date_out, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :keeper, 'Opiekun:', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.text_field :keeper, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row mb-3">
+    <%= form.label :description, 'Komentarz:', class: "col-2 col-form-label" %>
+    <div class="col-sm">
+      <%= form.text_area :description, rows: 5, class: "form-control" %>
+    </div>
+    </div>
+
+    <div class="form-group-row justify-content-center">
+      <%= form.submit class: "btn btn-outline-success btn-lg"%>
+    </div>
+    <% end %>
+  </div>
+  <div >
+    Pola oznaczone gwiazdka nie moga byc puste
   </div>
 
-  <div class="form-group-row mb-3">
-  <%= form.label :owner, 'Wlasciciel:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.text_field :owner, class: "form-control" %>
-  </div>
-  </div>
+    <div class="mb-3"
+      <%= link_to "[Powrot do listy]", pets_path %>
+    </div>
+      
+    </div>
 
-  <div class="form-group-row mb-3">
-  <%= form.label :owner_id, 'ID wlasciciela:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.number_field :onwer_id, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :breed, 'Rasa:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.text_field :breed, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :age, 'Wiek:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.number_field :age, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :weight, 'Waga:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.number_field :weight, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :disease, 'Szczepiony', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.text_field :disease, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :medicins, 'Leki:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.text_field :medicins, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :food, 'Preferowana karma:', class: "col-3 col-form-label" %>
-  <div class="col-sm">
-    <%= form.text_field :food, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :date_in, 'Pobyt od:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.date_field :date_in, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :date_out, 'Pobyt do:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.date_field :date_out, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :keeper, 'Opiekun:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.text_field :keeper, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row mb-3">
-  <%= form.label :description, 'Komentarz:', class: "col-2 col-form-label" %>
-  <div class="col-sm">
-    <%= form.text_area :description, rows: 5, class: "form-control" %>
-  </div>
-  </div>
-
-  <div class="form-group-row justify-content-center">
-    <%= form.submit class: "btn btn-outline-success btn-lg"%>
-  </div>
-
-
-  <% end %>
-</div>
-  <div>
-    <%= link_to "Back to pets", pets_path %>
-  </div>
-  </div>
 </div>

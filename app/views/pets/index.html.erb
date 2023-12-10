@@ -1,34 +1,32 @@
-<div id="page-content">
+
   <h1 class="text-center mt-4">Dostępne zwierzaki:</h1>
-  <p style="color: green"><%= notice %></p>
+
 
   <div class="container">
-    <% @pets.each do |pet| %>
-      <div class="row justify-content-md-center">
-        <div class="col-6 mt-4">
+  <% @pets.each do |pet| %>
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-header fst-italic">
           Opiekun: <%= pet.keeper %>
           </div>
           <div class="card-body">
             <h5 class="card-title"><%= link_to pet.title, pet_path(pet), class: "text-success" %></h5>
-            <p class="card-text"> Właściciel: <%= pet.owner %></p>
-            <%= link_to "Pokaż szczegóły", pet_path(pet), class: "btn btn-outline-success" %>
-            <%= link_to "Zadaj pytanie", pet_path(pet), class: "btn btn-outline-info" %>
+            <p class="card-text">Właściciel: <%= pet.owner %></p>
+            <%= link_to "Szczegoly", pet_path(pet), class: "btn btn-outline-success" %>
+            <%= link_to "Edycja", edit_pet_path(pet), class: "btn btn-outline-info" %>
+            
           </div>
           <div class="card-footer text-muted">
           <small>Pobyt od: <%= pet.date_in %><br/>
           Pobyt do: <%= pet.date_out %> </small>
-          <div>
+          </div>
         </div>
       </div>
     </div>
-    <% end %>
+  <% end %>
+  <div>
+  <%= link_to "Dodaj nowego podopiecznego", new_pet_path %>
   </div>
-
-
-
-
-
-  <%= link_to "New pet", new_pet_path %>
 </div>
+

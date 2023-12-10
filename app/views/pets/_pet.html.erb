@@ -1,6 +1,7 @@
+<h1 class="text-center mt-4">Szczegoly:</h1>
 
 <div id="<%= dom_id pet %>">
-<div class="card">
+<div class="card mt-4">
   <img src="home_dog1.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title text-center"><%= pet.title %></h5>
@@ -22,80 +23,10 @@
 
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+  <%= link_to "Edit this pet", edit_pet_path(@pet) %> |
+  <%= link_to "Back to pets", pets_path %>
+  <%= button_to "Destroy this pet", @pet, method: :delete %>
   </div>
 </div>
-
-
-  <p>
-    <strong>Title:</strong>
-    <%= pet.title %>
-  </p>
-
-  <p>
-    <strong>Picture:</strong>
-    <%= pet.picture %>
-  </p>
-
-  <p>
-    <strong>Owner:</strong>
-    <%= pet.owner %>
-  </p>
-
-  <p>
-    <strong>Owner:</strong>
-    <%= pet.owner_id %>
-  </p>
-
-  <p>
-    <strong>Breed:</strong>
-    <%= pet.breed %>
-  </p>
-
-  <p>
-    <strong>Age:</strong>
-    <%= pet.age %>
-  </p>
-
-  <p>
-    <strong>Weight:</strong>
-    <%= pet.weight %>
-  </p>
-
-  <p>
-    <strong>Disease:</strong>
-    <%= pet.disease %>
-  </p>
-
-  <p>
-    <strong>Medicins:</strong>
-    <%= pet.medicins %>
-  </p>
-
-  <p>
-    <strong>Food:</strong>
-    <%= pet.food %>
-  </p>
-
-  <p>
-    <strong>Date in:</strong>
-    <%= pet.date_in %>
-  </p>
-
-  <p>
-    <strong>Date out:</strong>
-    <%= pet.date_out %>
-  </p>
-
-  <p>
-    <strong>Keeper:</strong>
-    <%= pet.keeper %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= pet.description %>
-  </p>
 
 </div>
