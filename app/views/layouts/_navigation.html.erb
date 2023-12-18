@@ -27,10 +27,17 @@
         <%= link_to "Kontakt", about_path, class: "nav-link" %>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
+      
+  <ul class="navbar-nav">
+    <% if current_user %>
+      <li class="nav-item"><%= link_to "Edytuj konto", edit_user_registration_path, class:"nav-link" %></li>
+      <li class="nav-item"><%= button_to "Wyloguj się", destroy_user_session_path, method: :delete, class:"btn btn-small btn primary mx-2" %></li>
+        <% else %>
+      <li class="nav-item"><%= link_to "Rejestracja użytkownika", new_user_registration_path, class:"nav-link" %></li>
+      <li class="nav-item"><%= link_to "Logowanie", new_user_session_path, class:"nav-link" %></li>
+    <% end %>
+  </ul>
+
     </div>
   </div>
 </nav>
