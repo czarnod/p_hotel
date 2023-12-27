@@ -1,7 +1,5 @@
 
   <h1 class="text-center mt-4">Dostępne zwierzaki:</h1>
-
-
   <div class="container">
   <% @pets.each do |pet| %>
     <div class="row justify-content-md-center">
@@ -13,7 +11,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= link_to pet.title, pet_path(pet), class: "text-success" %></h5>
             <p class="card-text">Właściciel: <%= pet.owner %></p>
-            <%= link_to "Szczegoly", pet_path(pet), class: "btn btn-outline-success" %>
+            <%= link_to "Szczegóły", pet_path(pet), class: "btn btn-outline-success" %>
             <%= link_to "Edycja", edit_pet_path(pet), class: "btn btn-outline-info" %>
             
           </div>
@@ -25,8 +23,8 @@
       </div>
     </div>
   <% end %>
-  <div>
-  <%= link_to "Dodaj nowego podopiecznego", new_pet_path %>
-  </div>
+  
 </div>
-
+<div class="center-link">
+  <%= link_to "Zamelduj kolejnego gościa", new_pet_path %>
+  </div>

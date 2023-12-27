@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: %i[ show edit update destroy ]
+  before_action :set_pet, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   load_and_authorize_resource
   # GET /pets or /pets.json
@@ -12,7 +12,7 @@ class PetsController < ApplicationController
   end
 
   # GET /pets/new
-  def new
+  def new 
     @pet = Pet.new
   end
 
@@ -23,6 +23,19 @@ class PetsController < ApplicationController
   # POST /pets or /pets.json
   def create
     @pet = Pet.new(pet_params)
+
+    if current_user.admin? # Check if the current user is an admin
+      user = User.find_by(email: params[:pet][:owner_email])
+
+      if user
+        @pet.owner_id = user.id
+      else
+        # Handle case where user with provided email doesn't exist
+        # Redirect or display an error message
+      end
+    else
+      @pet.owner_id = current_user.id # For regular users, assign the current user's ID
+    end
 
     respond_to do |format|
       if @pet.save
@@ -66,6 +79,6 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:title, :picture, :owner, :owner_id, :breed, :age, :weight, :disease, :medicins, :food, :date_in, :date_out, :keeper, :description)
+      params.require(:pet).permit(:title, :image, :owner, :owner_id, :breed, :age, :weight, :medicins, :food, :date_in, :date_out, :keeper, :description, :vaccinated)
     end
 end

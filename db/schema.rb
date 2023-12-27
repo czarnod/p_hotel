@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_20_214019) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_21_204211) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -47,15 +47,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_20_214019) do
     t.string "breed"
     t.integer "age"
     t.integer "weight"
-    t.integer "disease"
-    t.integer "medicins"
-    t.integer "food"
+    t.string "medicins"
+    t.string "food"
     t.datetime "date_in"
     t.datetime "date_out"
     t.string "keeper"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "vaccinated"
   end
 
   create_table "users", force: :cascade do |t|

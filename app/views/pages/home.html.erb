@@ -1,12 +1,75 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag('website.jpg', class: 'd-block w-100', alt: 'Slide 1') %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Już funkcjonujemy!</h5>
+        <p>Zapraszamy do eksplorowania nowo powstałej strony hotelu :)</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag('consulting.jpg', class: 'd-block w-100', alt: 'Slide 2') %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Świąteczna promocja!</h5>
+        <p>Z kodem PETHOTEL otrzymujesz 10% zniżki na pobyt pupila :)</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag('engagement.jpg', class: 'd-block w-100', alt: 'Slide 3') %>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Nowe możliwości...</h5>
+        <p>Zaloguj się do swojego profilu aby śledzić na bieżąco status twojego pupila</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
-    <div class="container" id="home-container" >
-        <div class="jumbotron text-center text-white">
-            <h1 class="display-4">Pet Hotel</h1>
-            <p class="lead">Witamy na stronie Hotelu dla Psow</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-light btn-lg" href="#" role="button">O nas</a>
-        </div>
-    </div>  
+<script>
+  $(document).ready(function() {
+    // Interval function to change slides every 3 seconds (3000 milliseconds)
+    setInterval(function() {
+      $('#carouselExampleCaptions').carousel('next');
+    }, 4000);
+  });
+</script>
 
+<div class="image-container">
+  <div class="image-row">
+    <a href="#img1">
+      <%= image_tag('hotel1.jpg', alt: 'Image 1', class: 'clickable-image') %>
+    </a>
+    <a href="#img2">
+      <%= image_tag('hotel2.jpg', alt: 'Image 2', class: 'clickable-image') %>
+    </a>
+    <a href="#img3">
+      <%= image_tag('hotel3.jpg', alt: 'Image 3', class: 'clickable-image') %>
+    </a>
+  </div>
+</div>
+  <!-- Modal-like structure -->
+  <div class="modal" id="img1">
+    <a href="#" class="close">&times;</a>
+    <%= image_tag('hotel1.jpg', alt: 'Image 1', class: 'modal-content') %>
+  </div>
+  <div class="modal" id="img2">
+    <a href="#" class="close">&times;</a>
+    <%= image_tag('hotel2.jpg', alt: 'Image 2', class: 'modal-content') %>
+  </div>
+  <div class="modal" id="img3">
+    <a href="#" class="close">&times;</a>
+    <%= image_tag('hotel3.jpg', alt: 'Image 3', class: 'modal-content') %>
+</div>
 
